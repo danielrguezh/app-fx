@@ -15,38 +15,41 @@ public class ConfigManager {
     public static class ConfigProperties {
 
         static String path;
-
         private static final Properties properties = new Properties();
-
+        private static String idiomaActual = "es";
+        
         static {
-            
-           
+
         }
 
         /**
-         * Metodo estatico para obtener una propiedad
-         **/
+         *  Metodo para obtener una propiedad
+         */
         public static String getProperty(String key) {
             return properties.getProperty(key);
         }
 
         public static void setPath(String rutaPath) {
-            System.out.println("Dentro del setPath");
             File file = new File(rutaPath);
-
             if (!file.exists() || !file.isFile()) {
-                System.out.println("Path:"+file.getAbsolutePath());
+                System.out.println("Path: " +file.getAbsolutePath());
             }
             path = rutaPath;
             try {
-                System.out.println("Dentro del ConfigProperties");
-
                 FileInputStream input = new FileInputStream(path);
                 InputStreamReader isr = new InputStreamReader(input, "UTF-8");
                 properties.load(isr);
-            } catch (Exception e) {
+            } catch (IOException e) {
                 e.printStackTrace();
             }
+        }
+    
+        public static String getIdiomaActual() {
+            return idiomaActual;
+        }
+        
+        public static void setIdiomaActual(String idioma) {
+            idiomaActual = idioma;
         }
     }
 }

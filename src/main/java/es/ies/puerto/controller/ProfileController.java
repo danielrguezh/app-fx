@@ -30,7 +30,7 @@ public class ProfileController extends AbstractController {
      */
     @FXML
     public void initialize() {
-        loadIdioma(null, null);
+        cambiarIdioma();;
     }
 
     /**
@@ -56,5 +56,5 @@ public class ProfileController extends AbstractController {
         String tituloPantalla = ConfigManager.ConfigProperties.getProperty("loginTitle");
         mostrarPantalla(buttonVolverAtras, "login.fxml", tituloPantalla);
     }
-}
+
 }
