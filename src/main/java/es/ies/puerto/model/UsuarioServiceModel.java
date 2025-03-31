@@ -62,4 +62,25 @@ public class UsuarioServiceModel extends Conexion {
         return usuarios;
     }
 
+    /**
+     * Metodo para insertar un usuario
+     * @throws SQLException error controlado
+     *
+    public boolean insertarUsuario(UsuarioEntity usuario) throws SQLException {
+        String sql = "INSERT INTO usuarios (user, email, name, password) VALUES (?, ?, ?, ?)";
+        try (PreparedStatement sentencia = getConnection().prepareStatement(sql)) {
+            sentencia.setString(1, usuario.getUser());
+            sentencia.setString(2, usuario.getEmail());
+            sentencia.setString(3, usuario.getName());
+            sentencia.setString(4, usuario.getPassword());
+            sentencia.executeUpdate();
+            return true;
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            cerrar();
+        }
+        return false;
+    }
+    */
 }

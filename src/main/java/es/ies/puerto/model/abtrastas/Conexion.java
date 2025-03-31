@@ -19,7 +19,6 @@ public abstract class Conexion {
 
     /**
      * Constructor con path de conexion
-     * 
      * @param unaRutaArchivoBD ruta de la bbdd
      * @throws SQLException error controlado
      */

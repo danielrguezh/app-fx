@@ -2,10 +2,13 @@ package es.ies.puerto.model;
 
 import java.util.Objects;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 /**
  * @author danielrguezh
  * @version 1.0.0
  */
+@JsonIgnoreProperties(ignoreUnknown = true)
 public class UsuarioEntity {
 
     String email;

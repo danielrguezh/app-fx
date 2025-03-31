@@ -62,7 +62,7 @@ public abstract class AbstractController {
         }
 
         return properties;
-    }
+    }   
 
 
     public UsuarioServiceModel getUsuarioServiceModel() {

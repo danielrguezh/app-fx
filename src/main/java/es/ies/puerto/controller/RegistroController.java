@@ -49,7 +49,7 @@ public class RegistroController extends AbstractController {
     @FXML
     protected void onClickRegistar()  {
 
-        if (textFieldPassword == null ||  textFieldPassword.getText().isEmpty() 
+        if (textFieldPassword == null ||  textFieldPassword.getText().isEmpty()
             || textFieldPasswordRepit == null || textFieldPasswordRepit.getText().isEmpty()) {
             textMensaje.setText("¡El password no puede ser nulo o vacio!");
             return;
