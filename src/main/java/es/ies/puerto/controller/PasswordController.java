@@ -37,7 +37,7 @@ public class PasswordController extends AbstractController{
      */
     @FXML
     public void initialize() {
-        cambiarIdioma();
+        //cambiarIdioma();
     }
 
     /**

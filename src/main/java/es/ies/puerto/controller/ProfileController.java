@@ -40,9 +40,9 @@ public class ProfileController extends AbstractController {
      */
     public void cargarDatosUsuario(UsuarioEntity usuario) {
         if (usuario != null) {
-            textFieldUsuario.setText(usuario.getUser());
+            //textFieldUsuario.setText(usuario.getUser());
             textFieldPassword.setText("******");
-            textFieldNombre.setText(usuario.getName());
+            //textFieldNombre.setText(usuario.getName());
             textFieldEmail.setText(usuario.getEmail());
         }
     }
