@@ -13,13 +13,21 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListCell;
 import javafx.scene.control.ListView;
+import javafx.scene.text.Text;
 
+/**
+ * @author danielrguezh
+ * @version 1.0.0
+ */
 public class UsuariosListViewController extends AbstractController{
+    @FXML
+    private Text textListaUsuario;
+
     @FXML
     private Button buttonVolverAtras;
 
     @FXML
-    private ListView<UsuarioEntity> listViewUsuarios; 
+    private ListView<UsuarioEntity> listViewUsuarios;
 
     /**
      * Metodo de inicializacion de la interfaz
@@ -43,19 +51,12 @@ public class UsuariosListViewController extends AbstractController{
             if (empty || usuario == null) {
                 setText(null);
                 return;
-            } 
+            }
             String idRow = ConfigManager.ConfigProperties.getProperty("idRow");
             String usuarioRow = ConfigManager.ConfigProperties.getProperty("usuarioRow");
             String emailRow = ConfigManager.ConfigProperties.getProperty("emailRow");
-            String nombreRow = ConfigManager.ConfigProperties.getProperty("nombreRow");
-            String formato = ""+idRow+": %s\n"+usuarioRow+": %s\n"+emailRow+": %s\n"+nombreRow+": %s";
-            String texto = String.format(
-                formato, 
-                usuario.getId(), 
-                usuario.getUser(), 
-                usuario.getEmail(),
-                usuario.getName()
-                );
+            String formato = ""+idRow+": %s\n"+usuarioRow+": %s\n"+emailRow+": %s";
+            String texto = String.format(formato, usuario.getId(), usuario.getUsuario(), usuario.getEmail());
             setText(texto);
             }
         });

@@ -8,6 +8,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 
+/**
+ * @author danielrguezh
+ * @version 1.0.0
+ */
 public class ProfileController extends AbstractController {
 
     @FXML
@@ -34,22 +38,20 @@ public class ProfileController extends AbstractController {
     }
 
     /**
-     * Carga los datos del usuario en los campos de la interfaz grafica para Json
-     * @param usuario El objeto Usuario con los datos que se mostraran en pantalla
-     * Nota: Si se va a usar Json, cambiar el UsuarioEntitySqlite por UsuarioEntityJson
+     * Carga los datos del usuario en los campos de la interfaz grafica
+     * @param usuario
      */
     public void cargarDatosUsuario(UsuarioEntity usuario) {
         if (usuario != null) {
-            //textFieldUsuario.setText(usuario.getUser());
+            textFieldUsuario.setText(usuario.getUsuario());
             textFieldPassword.setText("******");
-            //textFieldNombre.setText(usuario.getName());
+            textFieldNombre.setText(usuario.getNombre());
             textFieldEmail.setText(usuario.getEmail());
         }
     }
 
     /**
-     * Maneja el evento de clic en el boton de volver atras
-     * Redirige a la pantalla de inicio de sesion (login)
+     * Redirige a la pantalla de login
      */
     @FXML
     protected void onVolverAtrasClick() {

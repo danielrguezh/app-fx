@@ -34,22 +34,12 @@
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-controls</artifactId>
-            <version>21</version>
+            <version>${javafx.version}</version>
         </dependency>
         <dependency>
             <groupId>org.openjfx</groupId>
             <artifactId>javafx-fxml</artifactId>
-            <version>21</version>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-graphics</artifactId>
-            <version>21</version>
-        </dependency>
-        <dependency>
-            <groupId>org.openjfx</groupId>
-            <artifactId>javafx-base</artifactId>
-            <version>21</version>
+            <version>${javafx.version}</version>
         </dependency>
 
         <!-- Biblioteca ControlsFX para UI mejorada -->
@@ -110,7 +100,6 @@
 
     <build>
         <plugins>
-            <!-- Plugin de compilación de Java 17 -->
             <plugin>
                 <groupId>org.apache.maven.plugins</groupId>
                 <artifactId>maven-compiler-plugin</artifactId>
@@ -121,7 +110,6 @@
                 </configuration>
             </plugin>
 
-            <!-- Plugin de ejecución para JavaFX -->
             <plugin>
                 <groupId>org.openjfx</groupId>
                 <artifactId>javafx-maven-plugin</artifactId>
@@ -196,13 +184,5 @@
                 <directory>src/main/resources</directory>
             </resource>
         </resources>
-
-        <repositories>
-    <repository>
-            <id>gluon</id>
-            <url>https://maven.gluonhq.com/nexus/content/repositories/public/</url>
-        </repository>
-    </repositories>
-
     </build>
 </project>

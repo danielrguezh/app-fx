@@ -22,7 +22,7 @@ public class UsuarioServiceModel extends Conexion {
 
     public UsuarioEntity obtenerUsuarioPorEmail(String email) {
         try {
-            String sql = "SELECT u.nombre, u.email FROM Usuario " + "as u where email='"+email+"'";
+            String sql = "SELECT u.nombre, u.email FROM usuarios " + "as u where email='"+email+"'";
         ArrayList<UsuarioEntity> usuarios = obtenerUsuario(sql);
         if (usuarios.isEmpty()) {
             return null;
@@ -37,7 +37,7 @@ public class UsuarioServiceModel extends Conexion {
 
 
     public ArrayList<UsuarioEntity> obtenerUsuarios() throws SQLException {
-        String sql = "SELECT * FROM Usuario";
+        String sql = "SELECT * FROM usuarios";
         return obtenerUsuario(sql);
     }
 
@@ -50,9 +50,8 @@ public class UsuarioServiceModel extends Conexion {
                 int usuarioId = resultado.getInt("id");
                 String usuarioStr = resultado.getString("user");
                 String emailStr = resultado.getString("email");
-                String nombreStr = resultado.getString("name");
                 String contraseniaStr = resultado.getString("password");
-                UsuarioEntity usuario = new UsuarioEntity(usuarioId, usuarioStr, emailStr, nombreStr, contraseniaStr);
+                UsuarioEntity usuario = new UsuarioEntity(usuarioId, usuarioStr, emailStr, contraseniaStr);
                 usuarios.add(usuario);
             }
         } catch (Exception e) {
@@ -68,7 +67,7 @@ public class UsuarioServiceModel extends Conexion {
      * @throws SQLException
      */
     public boolean addUsuario(UsuarioEntity usuario) throws SQLException {
-        String sql = "INSERT INTO usuarios (user, email, name, password) VALUES (?, ?, ?, ?)";
+        String sql = "INSERT INTO usuarios (user, email, password) VALUES (?, ?, ?, ?)";
         try (PreparedStatement sentencia = getConnection().prepareStatement(sql)) {
             sentencia.setString(1, usuario.getUsuario());
             sentencia.setString(2, usuario.getEmail());

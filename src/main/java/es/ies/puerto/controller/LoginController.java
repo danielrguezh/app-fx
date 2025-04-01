@@ -1,17 +1,11 @@
 package es.ies.puerto.controller;
 
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Properties;
 
-import es.ies.puerto.PrincipalApplication;
 import es.ies.puerto.config.ConfigManager;
 import es.ies.puerto.controller.abstractas.AbstractController;
 import es.ies.puerto.model.UsuarioEntity;
 import es.ies.puerto.servicio.UsuarioServicio;
 import javafx.fxml.FXML;
-import javafx.fxml.FXMLLoader;
-import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.ComboBox;
 import javafx.scene.control.PasswordField;
@@ -81,11 +75,7 @@ public class LoginController extends AbstractController {
     }
 
     /**
-     * Maneja el evento de seleccion de idioma en el ComboBox
      * Actualiza el idioma en la configuracion global
-     * Recarga las propiedades del nuevo idioma
-     * Actualiza todos los textos de la interfaz
-     * Refresca el titulo de la ventana
      */
     @FXML
     protected void seleccionarIdiomaClick() {
@@ -127,16 +117,16 @@ public class LoginController extends AbstractController {
             return;
         }
         UsuarioEntity usuario = getUsuarioServiceModel().obtenerUsuarioPorEmail(textFieldUsuarioEmail.getText());
-        if (usuario == null) { 
+        if (usuario == null) {
             textMensaje.setText(ConfigManager.ConfigProperties.getProperty("errorUsuarioNoEncontrado"));
             return;
         }
 
-        // boolean passwordCorrecta = textFieldPassword.getText().equals(usuario.getPassword());
-        //if (!passwordCorrecta) {
-        //    textMensaje.setText(ConfigManager.ConfigProperties.getProperty("errorContraseniaIncorrecta"));
-        //    return;
-        //}
+         boolean passwordCorrecta = textFieldPassword.getText().equals(usuario.getPassword());
+        if (!passwordCorrecta) {
+            textMensaje.setText(ConfigManager.ConfigProperties.getProperty("errorContraseniaIncorrecta"));
+            return;
+        }
         
         String tituloPantalla = ConfigManager.ConfigProperties.getProperty("profileTitle");
         mostrarPantallaMasUsusarios(openAceptarButton, "profile.fxml", tituloPantalla, usuario);
@@ -174,7 +164,7 @@ public class LoginController extends AbstractController {
     @FXML
     protected void openListarUsuariosClick() {
         String tituloPantalla = ConfigManager.ConfigProperties.getProperty("usuarioTitle");
-        mostrarPantalla(openRegistrarButton, "usuarios.fxml", tituloPantalla);
+        mostrarPantalla(openRegistrarButton, "usuariosListView.fxml", tituloPantalla);
     }
 
     /**

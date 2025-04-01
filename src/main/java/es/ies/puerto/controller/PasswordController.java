@@ -9,6 +9,10 @@ import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.text.Text;
 
+/**
+ * @author danielrguezh
+ * @version 1.0.0
+ */
 public class PasswordController extends AbstractController{
 
     UsuarioServicio usuarioServiceJson;
@@ -20,16 +24,16 @@ public class PasswordController extends AbstractController{
         usuarioServiceJson = new UsuarioServicio();
     }
 
-    @FXML 
+    @FXML
     private Text textEmail;
 
-    @FXML 
+    @FXML
     private TextField textFieldEmail;
 
-    @FXML 
+    @FXML
     private Button openAceptarButton;
 
-    @FXML 
+    @FXML
     private Text textMensaje;
 
     /**

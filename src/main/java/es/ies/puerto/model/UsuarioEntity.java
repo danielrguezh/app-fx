@@ -32,6 +32,19 @@ public class UsuarioEntity {
         return this;
     }
 
+    public UsuarioEntity(String usuario, String password, String email) {
+        this.usuario = usuario;
+        this.password = password;
+        this.email = email;
+    }
+
+    public UsuarioEntity(int id, String usuario, String password, String email) {
+        this.id = id;
+        this.usuario = usuario;
+        this.password = password;
+        this.email = email;
+    }
+
     public UsuarioEntity(int id, String usuario, String password, String nombre, String email) {
         this.id = id;
         this.usuario = usuario;
