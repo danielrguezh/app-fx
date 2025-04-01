@@ -13,6 +13,32 @@ Text {
     -fx-fill: #ffffff; /* Color blanco para contraste */
 }
 
+/* Estilo combo */
+ComboBox {
+    -fx-pref-width: 105px;
+    -fx-pref-height: 40px;
+    -fx-font-size: 14px;
+    -fx-background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro para combinar con otros elementos */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #00d1b2; /* Color verde futurista */
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, #00d1b2, 5, 0.5, 2, 2); /* Sombra verde futurista */
+}
+
+/* Estilo de los elementos del ComboBox */
+ComboBox .list-cell {
+    -fx-background-color: rgba(255, 255, 255, 0.1); /* Fondo transparente para las opciones */
+    -fx-text-fill: white; /* Texto blanco */
+}
+
+/* Estilo de los elementos seleccionados del ComboBox */
+ComboBox .list-cell:selected {
+    -fx-background-color: #00d1b2; /* Fondo verde para el ítem seleccionado */
+    -fx-text-fill: white; /* Texto blanco en ítem seleccionado */
+}
 
 /* Campos de texto y contraseña */
 .text-field, .password-field {
