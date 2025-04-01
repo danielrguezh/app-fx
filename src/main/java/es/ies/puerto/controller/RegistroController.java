@@ -92,7 +92,7 @@ public class RegistroController extends AbstractController {
             textMensaje.setText(ConfigManager.ConfigProperties.getProperty("errorEmailVacio"));
             return;
         }
-        if (textFieldPassword.getText().length() < 6) {
+        if (textFieldPassword.getText().length() < 8) {
             textMensaje.setText(ConfigManager.ConfigProperties.getProperty("errorPasswordLongitud"));
             return;
         }
@@ -116,8 +116,8 @@ public class RegistroController extends AbstractController {
             } catch (SQLException e) {
                 e.printStackTrace();
             }
-            /** Si se desea hacer en Json
-            boolean insertar = usuarioServiceJson.add(usuario);
+            /** Codigo para el json
+            boolean insertar = usuarioServicioJson.add(usuario);
             if (!insertar) {
                 textMensaje.setText(ConfigManager.ConfigProperties.getProperty("errorUsuarioExiste"));
                 return;

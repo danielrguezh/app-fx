@@ -131,7 +131,7 @@ public class LoginController extends AbstractController {
         String tituloPantalla = ConfigManager.ConfigProperties.getProperty("profileTitle");
         mostrarPantallaMasUsusarios(openAceptarButton, "profile.fxml", tituloPantalla, usuario);
 
-        /** Codigo en caso del json
+        /** Codigo para el json
         boolean passwordCorrecta = BCrypt.checkpw(textFieldPassword.getText(), usuario.getPassword());
 
         UsuarioEntity usuario = usuarioServicio.buscarUsuarioPorCriterio(textFieldUsuario.getText(), UsuarioEntity::getUsuario);
