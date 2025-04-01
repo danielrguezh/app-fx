@@ -41,18 +41,19 @@ public class UsuarioServiceModel extends Conexion {
         return obtenerUsuario(sql);
     }
 
-    public ArrayList<UsuarioEntity> obtenerUsuario(String sql) throws SQLException {
+    public ArrayList<UsuarioEntity> obtenerUsuario(String sql) throws SQLException{
         ArrayList<UsuarioEntity> usuarios = new ArrayList<UsuarioEntity>();
         try {
             PreparedStatement sentencia = getConnection().prepareStatement(sql);
             ResultSet resultado = sentencia.executeQuery();
-
-            while (resultado.next()) {
-                String nombreStr = resultado.getString("nombre");
-                String contraseniaStr = resultado.getString("contrasenia");
+            while(resultado.next()){
+                int usuarioId = resultado.getInt("id");
+                String usuarioStr = resultado.getString("user");
                 String emailStr = resultado.getString("email");
-                UsuarioEntity usuarioModel = new UsuarioEntity(emailStr, nombreStr, contraseniaStr);
-                usuarios.add(usuarioModel);
+                String nombreStr = resultado.getString("name");
+                String contraseniaStr = resultado.getString("password");
+                UsuarioEntity usuario = new UsuarioEntity(usuarioId, usuarioStr, emailStr, nombreStr, contraseniaStr);
+                usuarios.add(usuario);
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -63,15 +64,15 @@ public class UsuarioServiceModel extends Conexion {
     }
 
     /**
-     * Metodo para insertar un usuario
-     * @throws SQLException error controlado
-     *
-    public boolean insertarUsuario(UsuarioEntity usuario) throws SQLException {
+     * Metodo para agregar un usuario
+     * @throws SQLException
+     */
+    public boolean addUsuario(UsuarioEntity usuario) throws SQLException {
         String sql = "INSERT INTO usuarios (user, email, name, password) VALUES (?, ?, ?, ?)";
         try (PreparedStatement sentencia = getConnection().prepareStatement(sql)) {
-            sentencia.setString(1, usuario.getUser());
+            sentencia.setString(1, usuario.getUsuario());
             sentencia.setString(2, usuario.getEmail());
-            sentencia.setString(3, usuario.getName());
+            sentencia.setString(3, usuario.getNombre());
             sentencia.setString(4, usuario.getPassword());
             sentencia.executeUpdate();
             return true;
@@ -82,5 +83,4 @@ public class UsuarioServiceModel extends Conexion {
         }
         return false;
     }
-    */
 }

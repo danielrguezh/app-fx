@@ -2,35 +2,66 @@ package es.ies.puerto.model;
 
 import java.util.Objects;
 
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+
 
 /**
  * @author danielrguezh
  * @version 1.0.0
  */
-@JsonIgnoreProperties(ignoreUnknown = true)
 public class UsuarioEntity {
-
-    String email;
-    String nombre;
-    String contrasenia;
-
+    private int id;
+    private String usuario;
+    private String password;
+    private String nombre;
+    private String email;
 
     public UsuarioEntity() {
     }
+    public UsuarioEntity id(int id) {
+        setId(id);
+        return this;
+    }
 
-    public UsuarioEntity(String email, String nombre, String contrasenia) {
-        this.email = email;
+    public UsuarioEntity usuario(String usuario) {
+        setUsuario(usuario);
+        return this;
+    }
+
+    public UsuarioEntity email(String email) {
+        setEmail(email);
+        return this;
+    }
+
+    public UsuarioEntity(int id, String usuario, String password, String nombre, String email) {
+        this.id = id;
+        this.usuario = usuario;
+        this.password = password;
         this.nombre = nombre;
-        this.contrasenia = contrasenia;
-    }
-
-    public String getEmail() {
-        return this.email;
-    }
-
-    public void setEmail(String email) {
         this.email = email;
+    }
+
+    public int getId() {
+        return this.id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
+    }
+
+    public String getUsuario() {
+        return this.usuario;
+    }
+
+    public void setUsuario(String usuario) {
+        this.usuario = usuario;
+    }
+
+    public String getPassword() {
+        return this.password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
     }
 
     public String getNombre() {
@@ -41,12 +72,12 @@ public class UsuarioEntity {
         this.nombre = nombre;
     }
 
-    public String getContrasenia() {
-        return this.contrasenia;
+    public String getEmail() {
+        return this.email;
     }
 
-    public void setContrasenia(String contrasenia) {
-        this.contrasenia = contrasenia;
+    public void setEmail(String email) {
+        this.email = email;
     }
 
     @Override
@@ -56,24 +87,19 @@ public class UsuarioEntity {
         if (!(o instanceof UsuarioEntity)) {
             return false;
         }
-        UsuarioEntity usuarioModel = (UsuarioEntity) o;
-        return Objects.equals(email, usuarioModel.email);
+        UsuarioEntity usuarioEntity = (UsuarioEntity) o;
+        return  Objects.equals(email, usuarioEntity.email);
     }
 
-    @Override
-    public int hashCode() {
-        return Objects.hash(email);
-    }
-
-  
     @Override
     public String toString() {
         return "{" +
-            " email='" + getEmail() + "'" +
+            " id='" + getId() + "'" +
+            ", usuario='" + getUsuario() + "'" +
+            ", password='" + getPassword() + "'" +
             ", nombre='" + getNombre() + "'" +
-            ", contrasenia='" + getContrasenia() + "'" +
+            ", email='" + getEmail() + "'" +
             "}";
     }
-
-
-}
+    
+}  

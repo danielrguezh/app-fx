@@ -7,6 +7,7 @@ import es.ies.puerto.config.ConfigManager;
 import es.ies.puerto.controller.abstractas.AbstractController;
 import es.ies.puerto.model.UsuarioEntity;
 import es.ies.puerto.model.UsuarioServiceModel;
+import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
@@ -67,7 +68,7 @@ public class UsuariosListViewController extends AbstractController{
         try {
             UsuarioServiceModel service = getUsuarioServiceModel();
             ArrayList<UsuarioEntity> listaUsuarios = service.obtenerUsuarios();
-            ObservableList<UsuarioEntitySqlite> usuarios = FXCollections.observableArrayList(listaUsuarios);
+            ObservableList<UsuarioEntity> usuarios = FXCollections.observableArrayList(listaUsuarios);
             listViewUsuarios.setItems(usuarios);
         } catch (SQLException e) {
             e.printStackTrace();
