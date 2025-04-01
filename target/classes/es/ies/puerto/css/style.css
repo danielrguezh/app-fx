@@ -1,0 +1,114 @@
+/* Estilo raíz */
+.root {
+    -fx-font-family: "Roboto", sans-serif;
+    -fx-background-size: cover;
+    -fx-background-color: rgba(0, 0, 0, 0.5); /* Fondo oscuro para un toque futurista */
+}
+
+
+/* Estilo de texto */
+Text {
+    -fx-font-size: 18px;
+    -fx-font-weight: bold;
+    -fx-fill: #ffffff; /* Color blanco para contraste */
+}
+
+/* Estilo combo */
+ComboBox {
+    -fx-pref-width: 105px;
+    -fx-pref-height: 40px;
+    -fx-font-size: 14px;
+    -fx-background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro para combinar con otros elementos */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 10;
+    -fx-border-radius: 10;
+    -fx-border-color: #00d1b2; /* Color verde futurista */
+    -fx-border-width: 2px;
+    -fx-effect: dropshadow(gaussian, #00d1b2, 5, 0.5, 2, 2); /* Sombra verde futurista */
+}
+
+/* Estilo de los elementos del ComboBox */
+ComboBox .list-cell {
+    -fx-background-color: rgba(255, 255, 255, 0.1); /* Fondo transparente para las opciones */
+    -fx-text-fill: white; /* Texto blanco */
+}
+
+/* Estilo de los elementos seleccionados del ComboBox */
+ComboBox .list-cell:selected {
+    -fx-background-color: #00d1b2; /* Fondo verde para el ítem seleccionado */
+    -fx-text-fill: white; /* Texto blanco en ítem seleccionado */
+}
+
+/* Campos de texto y contraseña */
+.text-field, .password-field {
+    -fx-pref-height: 40px;
+    -fx-pref-width: 240px;
+    -fx-font-size: 16px;
+    -fx-font-family: "Roboto", sans-serif;
+    -fx-background-radius: 12;
+    -fx-border-radius: 12;
+    -fx-border-color: #00d1b2; /* Color verde futurista */
+    -fx-border-width: 2px;
+    -fx-background-color: rgba(255, 255, 255, 0.1); /* Fondo transparente con texto claro */
+    -fx-padding: 10px;
+    -fx-effect: dropshadow(gaussian, #00d1b2, 10, 0.5, 0, 5); /* Sombra verde futurista */
+    -fx-text-fill: white;
+}
+
+
+/* Estilo de campos de texto enfocados */
+.text-field:focused, .password-field:focused {
+    -fx-border-color: #00bfae; /* Color verde más intenso */
+    -fx-background-color: rgba(0, 0, 0, 0.6); /* Fondo oscuro al enfocar */
+}
+
+
+/* Botones */
+.button {
+    -fx-pref-width: 150px;
+    -fx-pref-height: 45px;
+    -fx-font-size: 16px;
+    -fx-background-color: #00d1b2; /* Color verde futurista */
+    -fx-text-fill: white;
+    -fx-font-weight: bold;
+    -fx-background-radius: 20;
+    -fx-effect: dropshadow(gaussian, #00bfae, 15, 0.5, 0, 5); /* Efecto de sombra más fuerte */
+    -fx-cursor: hand; /* Cursor de mano para interacción */
+    -fx-transition: all 0.3s ease-in-out; /* Transición suave */
+}
+
+
+/* Hover para botones */
+.button:hover {
+    -fx-background-color: #00bfae; /* Cambio de color al pasar el cursor */
+    -fx-effect: dropshadow(gaussian, #00bfae, 15, 0.5, 0, 5); /* Sombra más brillante */
+}
+
+
+/* Estilo de mensaje de error */
+#textMensaje {
+    -fx-font-size: 16px;
+    -fx-font-weight: bold;
+    -fx-fill: #ff4747; /* Color rojo brillante para errores */
+    -fx-text-fill: #ff4747;
+}
+
+
+/* Estilos específicos de botones */
+#openAceptarButton {
+    -fx-pref-width: 130px;
+    -fx-pref-height: 45px;
+}
+
+
+#openRegistrarButton {
+    -fx-pref-width: 180px;
+    -fx-pref-height: 45px;
+}
+
+
+#buttonRecuperarContrasenia {
+    -fx-pref-width: 220px;
+    -fx-pref-height: 45px;
+}

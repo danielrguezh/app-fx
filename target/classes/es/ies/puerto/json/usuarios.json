@@ -1,0 +1,20 @@
+[
+    {
+        "usuario": "Pepe",
+        "password": "0lj$2a$10$cC",
+        "nombre": "Pepe",
+        "email": "fpepeewf@gmail.com"
+    },
+    {
+        "usuario": "Paco",
+        "password": "soypaco5/q",
+        "nombre": "Paco",
+        "email": "paco1234@outlook.es"
+    },
+    {
+        "usuario": "Pedro",
+        "password": "$2229Pedro",
+        "nombre": "Pedro",
+        "email": "pedro123@therealpedro.gov"
+    }
+]
